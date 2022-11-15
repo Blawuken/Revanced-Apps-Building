@@ -8,3 +8,7 @@ test*
 /logs
 build.md
 cmpr
+
+# Telegram script ignore
+telegram-script/release_notification.md
+telegram-script/__pycache__
