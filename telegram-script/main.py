@@ -5,7 +5,7 @@ from markdown_to_telegraph import MarkdownToTelegraph
 
 # Read release.json file
 release = requests.get(Config.REVANCED_APKS_RELEASE_URL).json()
-changelog_patch = requests.get("https://api.github.com/repos/Blawuken/revanced-patches-extended/releases/latest").json()
+changelog_patch = requests.get(Config.REVANCED_PATCHES_URL).json()
 telegraph = MarkdownToTelegraph("ExtendedApps", "YouTube Extended", "https://t.me/ExtendedApps")
 
 def revanced_version_message():
