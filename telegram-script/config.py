@@ -24,12 +24,11 @@ class Config:
 
 {notes}
 
-📥 *Downloads ೄྀ࿐ ˊˎ-*
-
-Non-Root:
+*🔻 Downloads ೄྀ࿐ ˊˎ-*
+`Non-Root:`
 {nonroot_files}
 
-Magisk (Root):
+`Magisk Modules (Root):`
 {root_files}
 
 @ExtendedApps | @ExtendedAppsGroup"""

@@ -47,4 +47,5 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: markdown
+          photo: logo.png
           message_file: release_notification.md

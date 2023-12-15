@@ -13,7 +13,7 @@ def revanced_version_message():
     return version_message
 
 def generate_file_bullet(file_name, file_url):
-    return f"◪ [{file_name}](https://semawur.com/st/?api=12009627cdbda7809f8aa8a75007ec876ac0503c&url={file_url})"
+    return f"📦 [{file_name}](https://semawur.com/st/?api=12009627cdbda7809f8aa8a75007ec876ac0503c&url={file_url})"
 
 def generate_files_message():
 
