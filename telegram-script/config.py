@@ -1,6 +1,6 @@
 class Config:
     REVANCED_APKS_RELEASE_URL = (
-        "https://api.github.com/repos/revanced-apks/build-apps/releases/latest"
+        "https://api.github.com/repos/Blawuken/Revanced-Apps-Building/releases/latest"
     )
     MICROG_RELEASE_URL = (
         "https://api.github.com/repos/TeamVanced/VancedMicroG/releases/latest"
@@ -9,23 +9,22 @@ class Config:
         "https://api.github.com/repos/revanced/revanced-patches/compare"
     )
     REVANCED_EXTENDED_CHANGES_URL = (
-        "https://api.github.com/repos/inotia00/revanced-patches/compare"
+        "https://api.github.com/repos/Blawuken/revanced-patches-extended/compare"
     )
 
     NOTES = """*≣ Note:*
- ➜ `mindetach.zip` is used to detach play store updates for YT and YT Music for rooted users.
- ➜ `microg.apk` is used for google services and must be installed for non root YT and YT Music."""
-    CREDITS_MESSAGE = "Credits to our upstream repository [j-hc/revanced-magisk-module](https://github.com/j-hc/revanced-magisk-module)"
+➜ Gunakan modul [zygisk-detach](https://github.com/j-hc/zygisk-detach) untuk melepaskan YouTube dan YT Music dari Play Store.
+➜ Install [MicroG](https://github.com/TeamVanced/VancedMicroG/releases) untuk menggunakan YouTube dan YT Music di perangkat non-root."""
 
-    RELEASE_MESSAGE = """📑 *RELEASE* {release_name}
+    RELEASE_MESSAGE = """📑 *RELEASE {release_name}*
 
 {revanced_version_message}
 
-[Release notes and changelogs (What's New)]({changelogs_url})
+[Changelogs (What's New)]({changelogs_url})
 
 {notes}
 
-📦 *Downloads* 
+📥 *Downloads ೄྀ࿐ ˊˎ-*
 
 Non-Root:
 {nonroot_files}
@@ -33,6 +32,4 @@ Non-Root:
 Magisk (Root):
 {root_files}
 
-{credits_message}
-    
-@revanced_apks_web | revanced-apks.pages.dev"""
+@ExtendedApps | @ExtendedAppsGroup"""

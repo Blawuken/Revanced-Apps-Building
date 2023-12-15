@@ -3,23 +3,17 @@ import re
 import requests
 from markdown_to_telegraph import MarkdownToTelegraph
 
-
 # Read release.json file
 release = requests.get(Config.REVANCED_APKS_RELEASE_URL).json()
-
-telegraph = MarkdownToTelegraph("revanced_apks_web", "ReVanced APKs", "https://t.me/revanced_apks_web")
-
+changelog_patch = requests.get("https://api.github.com/repos/Blawuken/revanced-patches-extended/releases/latest").json()
+telegraph = MarkdownToTelegraph("ExtendedApps", "YouTube Extended", "https://t.me/ExtendedApps")
 
 def revanced_version_message():
-    version_message = "\n".join(re.findall(r"CLI:\s[a-zA-Z-.\s0-9:\/]+.jar", release["body"])) or ""
-    # Remove duplicate version message
-    version_message = "\n".join(list(dict.fromkeys(version_message.split("\n"))))
+    version_message = release["body"] or ""
     return version_message
 
-
 def generate_file_bullet(file_name, file_url):
-    return f"🔗 [{file_name}]({file_url})"
-
+    return f"◪ [{file_name}](https://semawur.com/st/?api=12009627cdbda7809f8aa8a75007ec876ac0503c&url={file_url})"
 
 def generate_files_message():
 
@@ -35,39 +29,10 @@ def generate_files_message():
         else:
             nonroot_files.append(generate_file_bullet(file_name, file_url))
 
-    microg = fetch_microg()
-    nonroot_files.append(
-        generate_file_bullet(microg["microg_name"], microg["microg_file"])
-    )
-
     return {"nonroot_files": nonroot_files, "root_files": root_files}
 
-
-def fetch_microg():
-
-    vanced_microg_release = requests.get(Config.MICROG_RELEASE_URL).json()
-
-    microg_file = vanced_microg_release["assets"][0] or []
-
-    microg_name = (
-        microg_file["name"].strip(".apk")
-        + "-"
-        + vanced_microg_release["tag_name"]
-        + ".apk"
-        or "microg.apk"
-    )
-    microg_file = microg_file["browser_download_url"] or ""
-
-    if "microg" in microg_file:
-        return {"microg_name": microg_name, "microg_file": microg_file}
-    else:
-        # to avoid error returning empty string
-        return {"microg_name": "", "microg_file": ""}
-
-
 def fetch_changelogs_telegraph_url():
-    return telegraph.create_page_from_string("Changelogs", release["body"])
-
+    return telegraph.create_page_from_string("Changelogs", changelog_patch["body"])
 
 def main():
     files = generate_files_message()
@@ -81,7 +46,6 @@ def main():
         notes=Config.NOTES,
         nonroot_files="\n".join(files["nonroot_files"]),
         root_files="\n".join(files["root_files"]),
-        credits_message=Config.CREDITS_MESSAGE,
     )
 
     print(release_message)
