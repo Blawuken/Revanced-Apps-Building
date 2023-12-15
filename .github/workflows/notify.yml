@@ -21,31 +21,17 @@ jobs:
           fetch-depth: 0
           submodules: true
 
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10' # The python version to use.
-          cache: 'pip'
-          cache-dependency-path: 'telegram-script/requirements.txt'
-        
-      - name: Install dependencies
-        run: pip install -r telegram-script/requirements.txt
-     
-      - name: Run telegram notification script
-        run: python3 telegram-script
-
-#     - name: Commit release description changes
-#        uses: stefanzweifel/git-auto-commit-action@v4
-#        with:
-#          commit_message: Update telegram release message ${{ github.run_id }}
-#          branch: update
-#          file_pattern: '*.md'
-          
       - name: Telegram Channel Update
-        uses: appleboy/telegram-action@master
-        with:
-          to: ${{ secrets.TELEGRAM_TO }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          format: markdown
-          photo: logo.png
-          message_file: release_notification.md
+        run: |
+          telegram_message() {
+               curl -v "https://api.telegram.org/bot""$TELEGRAM_TOKEN""/sendPhoto?chat_id=""$TELEGRAM_TO""$ARGS_EXTRA" -H 'Content-Type: multipart/form-data' \
+               --form photo="https://telegra.ph/file/095a9dbcc129453a28c12.png" \
+               -F "parse_mode=html" \
+               -F caption="$1"
+          }
+          
+          TG_TEXT="$(< release_notification.md)"
+          telegram_message "$TG_TEXT"
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_TO: ${{ secrets.TELEGRAM_TO }}
