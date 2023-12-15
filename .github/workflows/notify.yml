@@ -46,7 +46,7 @@ jobs:
           telegram_message() {
                curl -v "https://api.telegram.org/bot""$TELEGRAM_TOKEN""/sendPhoto?chat_id=""$TELEGRAM_TO""$ARGS_EXTRA" -H 'Content-Type: multipart/form-data' \
                --form photo="https://telegra.ph/file/095a9dbcc129453a28c12.png" \
-               -F "parse_mode=html" \
+               -F "parse_mode=markdown" \
                -F caption="$1"
           }
           
