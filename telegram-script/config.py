@@ -8,7 +8,7 @@ class Config:
 
     NOTES = """*≣ Note:*
 ➜ Gunakan modul [zygisk-detach](https://github.com/j-hc/zygisk-detach/releases/latest) untuk melepaskan YouTube dan YT Music dari Play Store.
-➜ Install [MicroG](https://github.com/TeamVanced/VancedMicroG/releases) untuk menggunakan YouTube dan YT Music di perangkat non-root."""
+➜ Install [MicroG](https://github.com/Blawuken/MicroG-Extended/releases/latest) untuk menggunakan YouTube dan YT Music di perangkat non-root."""
 
     RELEASE_MESSAGE = """📑 *RELEASE {release_name}*
 
