@@ -25,4 +25,8 @@ class Config:
 `Magisk Modules (Root):`
 {root_files}
 
+*≣ Credits:*
+➜ [ReVanced](https://github.com/ReVanced)
+➜ [inotia00](https://github.com/inotia00)
+
 @ExtendedApps | @ExtendedAppsGroup"""
