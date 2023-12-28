@@ -28,5 +28,6 @@ class Config:
 *≣ Credits:*
 ➜ [ReVanced](https://github.com/ReVanced)
 ➜ [inotia00](https://github.com/inotia00)
+➜ [j-hc](https://github.com/j-hc)
 
 @ExtendedApps | @ExtendedAppsGroup"""

@@ -2,7 +2,7 @@
 
 # ReVanced Magisk Module
 [![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/ExtendedApps)
-[![CI](https://github.com/Blawuken/revanced-magisk-module/actions/workflows/ci.yml/badge.svg?event=schedule)](https://github.com/Blawuken/revanced-magisk-module/actions/workflows/ci.yml)
+[![CI](https://github.com/Blawuken/Revanced-Apps-Building/actions/workflows/ci.yml/badge.svg)](https://github.com/Blawuken/Revanced-Apps-Building/actions/workflows/ci.yml)
 
 Extensive ReVanced builder  
 
