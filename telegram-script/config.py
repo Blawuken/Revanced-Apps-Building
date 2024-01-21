@@ -18,11 +18,12 @@ class Config:
 
 {notes}
 
-*🔻 Downloads ೄྀ࿐ ˊˎ-*
-`Non-Root:`
+*📥 Downloads ೄྀ࿐ ˊˎ-*
+
+*Aplication (Non-Root):*
 {nonroot_files}
 
-`Magisk Modules (Root):`
+*Magisk Modules (Root):*
 {root_files}
 
 *≣ Credits:*
