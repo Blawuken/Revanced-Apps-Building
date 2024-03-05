@@ -5,25 +5,14 @@ enable-magisk-update = true   # set this to false if you do not want to receive 
 
 # you can use rvmm-config-gen to generate a config
 
-[Music-Extended-arm]
+[Music-Extended]
 app-name = "Music"
 patches-source = "Blawuken/revanced-patches-extended"
 integrations-source = "Blawuken/revanced-integrations-extended"
 cli-source = "ReVanced/revanced-cli"
 rv-brand = "Extended"
 build-mode = "both"
-arch = "arm-v7a"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music/"
-
-[Music-Extended-arm64]
-app-name = "Music"
-patches-source = "Blawuken/revanced-patches-extended"
-integrations-source = "Blawuken/revanced-integrations-extended"
-cli-source = "ReVanced/revanced-cli"
-rv-brand = "Extended"
-build-mode = "both"
-arch = "arm64-v8a"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music/"
+uptodown-dlurl = "https://youtube-music.en.uptodown.com/android"
 
 [YouTube-Extended]
 app-name = "YouTube"
