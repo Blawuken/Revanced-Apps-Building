@@ -1,0 +1,37 @@
+name: Test Build
+on:
+  push:
+
+jobs:
+  run:
+    permissions: write-all
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: true
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: "zulu"
+          java-version: "17"
+
+      - name: Build Youtube modules/APKs
+        run: ./build.sh config/youtube.toml
+
+      - name: Build Youtube Music modules/APKs
+        run: ./build.sh config/youtubemusic.toml
+
+      - name: Upload YouTube Extended
+        uses: actions/upload-artifact@v2
+        with:
+          name: 'YouTube Extended'
+          path: ./build/youtube-extended-*.apk
+
+      - name: Upload YouTube Music Extended
+        uses: actions/upload-artifact@v2
+        with:
+          name: 'YouTube Music Extended'
+          path: ./build/music-extended-*.apk

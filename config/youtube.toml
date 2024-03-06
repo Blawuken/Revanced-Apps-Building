@@ -1,0 +1,15 @@
+enable-magisk-update = true   # set this to false if you do not want to receive updates for the module in magisk app
+
+# add 'enabled = false' for not patching a specific app or remove it from the config
+# see https://github.com/j-hc/revanced-magisk-module/blob/main/CONFIG.md for more detailed explanations
+
+# you can use rvmm-config-gen to generate a config
+
+[YouTube-Extended]
+app-name = "YouTube"
+patches-source = "Blawuken/revanced-patches-extended"
+integrations-source = "Blawuken/revanced-integrations-extended"
+cli-source = "Blawuken/revanced-cli-extended"
+rv-brand = "Extended"
+build-mode = "apk"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube/"
